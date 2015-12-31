@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<project name="lualint" default="build" basedir=".">
+	<!-- mark:build.properties -->
+	<!-- /mark:build.properties -->
+
+	<property file="build.properties" /> 
+	<property file="../build.properties" /> 
+	
+	<property name="src.dir" value="src" />
+	
+	<!-- Documentation process
+	none: if you supply your own html file as this template does.
+	xsltproc: if you plan on using docbook
+	-->
+	<property name="docs-proc.target" value="none" />
+	
+	<!-- jEdit installation properties. -->
+	<!-- mark:properties -->
+	<property name="build.support" value="../../build-support" />
+	<property name="install.dir" value="/Users/admin/Library/jEdit_lua/jars" />
+	<property name="jedit.install.dir" value="/Applications/jEdit.app/Contents/Java" />
+	<property name="jedit.plugins.dir" value="${install.dir}" />
+	<!-- /mark:properties -->
+	<import file="${build.support}/plugin-build.xml" />
+	
+	<!-- If you want any extra files to be included with your plugin's jar,
+	such as custom images, you need to specify them here. -->
+	<selector id="packageFiles">
+		<and>
+			<or>
+				<filename name="**/lualint.html" />
+			</or>
+		</and>
+	</selector>
+	
+	<!-- Add your plugin's specific dependencies here -->
+	<path id="project.class.path">
+		<!-- Dependencies that are bundled with your plugin.
+		These should also be represented in your props file under the, 
+		"plugin.[plugin class].jars" property. -->
+		<!-- <pathelement path="lib/dependency.jar" /> -->
+		<!-- mark:libs -->
+	<!-- /mark:libs -->
+		
+		<!-- Dependencies that are supplied by other plugins. -->
+		<!-- <pathelement path="${jedit.plugins.dir}/dependency.jar" /> -->
+		<!-- mark:plugins -->
+	<pathelement path="${jedit.plugins.dir}/ErrorList.jar" />
+	<!-- <pathelement path="${jedit.plugins.dir}/CtagsInterface.jar"/> -->
+	<!-- /mark:plugins -->
+	</path>
+	
+</project>
+<!-- ::mode=xml:: -->
