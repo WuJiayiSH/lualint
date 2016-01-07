@@ -1,0 +1,23 @@
+# ::mode=properties:: #
+# Basic Plugin Information {{{
+plugin.lualint.LualintPlugin.activate=startup
+plugin.lualint.LualintPlugin.author=Jiayi Wu
+plugin.lualint.LualintPlugin.description=lualint provides jEdit with code syntax checking for lua using luac.
+plugin.lualint.LualintPlugin.docs=docs/lualint.html
+plugin.lualint.LualintPlugin.longdescription=description.html
+plugin.lualint.LualintPlugin.name=lualint
+plugin.lualint.LualintPlugin.usePluginHome=true
+plugin.lualint.LualintPlugin.version=0.1
+# }}} Basic Plugin Information
+
+# Dependencies {{{
+plugin.lualint.LualintPlugin.depend.0=jedit 05.00.01.00
+plugin.lualint.LualintPlugin.depend.1=jdk 1.6
+plugin.lualint.LualintPlugin.depend.3=plugin errorlist.ErrorListPlugin 2.0
+# }}} Dependencies
+
+
+
+plugin.lualint.LualintPlugin.option-pane=optionpane
+options.optionpane.code=new lualint.LualintOptionPane();
+options.optionpane.label=lualint
